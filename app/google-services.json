@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "783730415272",
+    "project_id": "chillittasks",
+    "storage_bucket": "chillittasks.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783730415272:android:044542b176b7c5ca90549d",
+        "android_client_info": {
+          "package_name": "com.tech.chillittasks"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBByMpcnSpbUQZG51heRPJpXGQNlTZbaIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
