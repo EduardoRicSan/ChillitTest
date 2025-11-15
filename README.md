@@ -9,79 +9,25 @@
 
 ---
 
-## 📌 Features
+## 📌 Architecture
 
-- User authentication (registration and login) via **Firebase Authentication**.
-- Task creation and updates synchronized with **Firestore**.
-- Offline support: tasks are stored locally with **Room** and synced when online.
-- Modern and responsive UI with **Jetpack Compose**.
-- Network state handling using `NetworkResult` (`Idle`, `Loading`, `Success`, `Error`).
-- Clean and modularized architecture for scalability and maintainability.
-- Colored status indicators for tasks: Pending, In Progress, Done.
-- Secure logout and state management.
+The project follows **Clean Architecture** and **MVVM**:
 
----
+- **Presentation layer**: Jetpack Compose screens and ViewModels handle UI and state.
+- **Domain layer**: Models, UseCases, and repository interfaces manage business logic.
+- **Data layer**: Repository implementations, Room for local persistence, and Firebase Firestore for remote data.
 
-## 🏗 Architecture
-
-The project follows **Clean Architecture**:
-chillittasks/
-├─ app/ # UI, navigation, Compose screens and ViewModels
-├─ core/ # Shared utilities, network helpers
-├─ data/ # Repository implementations, Room, Firebase
-├─ domain/ # Models, UseCases, repository interfaces
-
-### Patterns & Principles
-
-- **MVVM**: Separation of UI and business logic.
-- **Repository Pattern**: Unified data access layer.
-- **Clean Architecture**: Decoupled domain, data, and UI layers.
-- **Dependency Injection**: Hilt for managing dependencies.
-- **Reactive programming**: Coroutines + Flow for async operations.
+This separation ensures maintainable, testable, and scalable code.
 
 ---
 
-## 🛠 Technologies
+## ⚙️ Key Technical Decisions
 
-- **Kotlin**  
-- **Jetpack Compose** (Material3, Cards, Buttons)  
-- **Firebase Authentication & Firestore**  
-- **Room** for local persistence  
-- **Hilt** for dependency injection  
-- **Coroutines + Flow**  
-- **Kotlin Serialization** for DTOs
+- **MVVM + Clean Architecture** for clear separation of concerns.
+- **Room + Firestore** to support offline-first functionality.
+- **Hilt** for dependency injection across modules.
+- **Coroutines + Flow** for asynchronous and reactive data handling.
+- **NetworkResult** to unify network state (`Idle`, `Loading`, `Success`, `Error`).
+- **Jetpack Compose** for declarative, responsive UI components.
 
- 🚀 Usage
-
-Register or login with email and password.
-
-Add tasks with title and description.
-
-Tap tasks to cycle through statuses: PENDING → IN_PROGRESS → DONE → PENDING.
-
-Logout using the bottom button.
-
-Offline tasks are saved locally and synced automatically when online.
-
-🖌 UI
-
-Tasks displayed as cards with rounded corners, shadows, and color-coded status.
-
-Modern inputs, buttons, and loading indicators using Material3.
-
-Smooth, responsive, and consistent design across devices.
-
-📈 Network & Offline Handling
-
-NetworkResult ensures consistent state management:
-
-Idle → no operation
-
-Loading → shows loader
-
-Success → data updated
-
-Error → displays error message
-
-Offline support: all tasks created offline are stored locally and synced later.
-
+---
